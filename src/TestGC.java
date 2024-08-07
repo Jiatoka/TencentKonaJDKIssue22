@@ -13,7 +13,7 @@ public class TestGC {
         int maxIterations = 3000;
         for(int i=1;i<=maxIterations;i++){
             //新增1M
-            list.add(new byte[1*1024*1024]);
+            list.add(new byte[10*1024*1024]);
             //每隔100 clear一次
             if(i%100==0){
                 list.clear();
@@ -23,7 +23,7 @@ public class TestGC {
             Thread.sleep(10);
         }
         long end= System.currentTimeMillis();
-        System.out.printf("耗费时间"+(end-start)+'s');
+        System.out.printf("耗费时间"+(end-start)+"ms");
         System.out.println("测试完成");
     }
 }
